@@ -221,6 +221,114 @@ footer{
   background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--gold) 12%,transparent))
 }
 footer .w::before{content:"✦";display:block;color:var(--gold);font-size:14px;margin-bottom:8px}
+
+:root{
+  --coral:#e2725b;--coral-soft:#fbe1d9;
+  --mint:#4f9e82;--mint-soft:#dcefe6;
+  --lav:#8a6fbf;--lav-soft:#e9e1f5;
+  --sun:#d99a2b;--sun-soft:#fbeccb;
+  --rose:#d0607e;--rose-soft:#f8dde4
+}
+.btn{background:var(--coral-soft);border-color:#f3c8bb;color:#8f3a28;font-weight:600}
+.btn:hover{background:#f8d2c6;transform:translateY(-2px) rotate(-1deg)}
+.btn.o{font-weight:500}
+.btn.o:hover{transform:translateY(-2px)}
+
+.hero{
+  background:
+    radial-gradient(circle at 8% 12%,var(--coral-soft) 0,transparent 32%),
+    radial-gradient(circle at 92% 18%,var(--lav-soft) 0,transparent 30%),
+    radial-gradient(circle at 85% 92%,var(--mint-soft) 0,transparent 32%),
+    radial-gradient(circle at 12% 95%,var(--sun-soft) 0,transparent 30%),
+    linear-gradient(165deg,#f8f3ee,#f3ebe5)
+}
+.hero::after{border:1.5px dashed color-mix(in srgb,var(--coral) 35%,transparent)}
+.hero h1 em{
+  font-style:italic;color:var(--rose);
+  background:linear-gradient(transparent 62%,color-mix(in srgb,var(--sun) 35%,transparent) 62%);
+  padding:0 .08em
+}
+.logo{color:var(--rose);animation:bob 4s ease-in-out infinite}
+.logo::after{inset:-9px;border:2px dashed color-mix(in srgb,var(--coral) 55%,transparent);animation:spin 18s linear infinite}
+.fx{
+  position:absolute;z-index:1;display:grid;place-items:center;width:46px;height:46px;border-radius:14px;
+  font-size:22px;line-height:1;box-shadow:0 8px 18px #2f272914;animation:float 6s ease-in-out infinite;pointer-events:none
+}
+.fx.f1{top:34px;left:7%;background:var(--rose-soft);color:var(--rose);transform:rotate(-12deg)}
+.fx.f2{top:48px;right:8%;background:var(--sun-soft);color:var(--sun);animation-delay:-1.5s;transform:rotate(10deg)}
+.fx.f3{bottom:46px;left:10%;background:var(--mint-soft);animation-delay:-3s;transform:rotate(8deg)}
+.fx.f4{bottom:56px;right:11%;background:var(--lav-soft);animation-delay:-4.5s;transform:rotate(-8deg)}
+.fx.f5{top:44%;left:3%;width:30px;height:30px;font-size:15px;border-radius:50%;background:var(--coral-soft);color:var(--coral);animation-delay:-2s}
+.fx.f6{top:40%;right:3.5%;width:30px;height:30px;font-size:15px;border-radius:50%;background:var(--mint-soft);color:var(--mint);animation-delay:-5s}
+@media(max-width:620px){.fx.f5,.fx.f6{display:none}.fx{width:38px;height:38px;font-size:18px}.fx.f1{top:22px;left:5%}.fx.f2{top:26px;right:5%}.fx.f3{bottom:22px;left:4%}.fx.f4{bottom:22px;right:4%}}
+
+.mq{margin:18px 0 0;overflow:hidden;border-radius:999px;background:var(--tx);color:#f6efe9;padding:10px 0;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq div{display:flex;gap:28px;width:max-content;animation:mq 28s linear infinite;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.mq span{display:flex;align-items:center;gap:28px;white-space:nowrap}
+.mq i{font-style:normal}
+.mq span:nth-child(5n+1) i{color:#f4a593}.mq span:nth-child(5n+2) i{color:#f2cd7e}.mq span:nth-child(5n+3) i{color:#9fd3bd}.mq span:nth-child(5n+4) i{color:#c4b1e6}.mq span:nth-child(5n) i{color:#f0a6ba}
+
+.perks{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0 0}
+@media(min-width:760px){.perks{grid-template-columns:repeat(4,1fr);gap:14px}}
+.perk{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:var(--card);border:1px solid var(--line);transition:transform .25s}
+.perk:hover{transform:translateY(-3px)}
+.perk i{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;font-style:normal;font-size:19px}
+.perk b{display:block;font-size:13.5px;font-weight:600;line-height:1.25}
+.perk small{display:block;font-size:12px;color:var(--mu);line-height:1.3}
+.perk:nth-child(1) i{background:var(--coral-soft)}.perk:nth-child(2) i{background:var(--sun-soft)}.perk:nth-child(3) i{background:var(--mint-soft)}.perk:nth-child(4) i{background:var(--lav-soft)}
+
+.sh2 h2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sh2 h2::after{flex-basis:100%;width:auto;max-width:56px;height:3px;margin-top:2px;background:linear-gradient(90deg,var(--coral),var(--sun),var(--mint))}
+.ic{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-style:normal;font-size:19px;background:var(--k-soft,var(--coral-soft));transition:transform .3s}
+.sec:hover .ic{animation:wig .6s ease}
+.sec:nth-of-type(2) .ic{--k-soft:var(--lav-soft)}.sec:nth-of-type(3) .ic{--k-soft:var(--mint-soft)}
+
+.grid>.card:nth-child(5n+1){--k:var(--coral);--k-soft:var(--coral-soft)}
+.grid>.card:nth-child(5n+2){--k:var(--mint);--k-soft:var(--mint-soft)}
+.grid>.card:nth-child(5n+3){--k:var(--lav);--k-soft:var(--lav-soft)}
+.grid>.card:nth-child(5n+4){--k:var(--sun);--k-soft:var(--sun-soft)}
+.grid>.card:nth-child(5n){--k:var(--rose);--k-soft:var(--rose-soft)}
+.card{position:relative}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:4px;z-index:2;background:var(--k,var(--coral));opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-6px) rotate(-.6deg);border-color:color-mix(in srgb,var(--k,var(--coral)) 40%,var(--line));box-shadow:0 18px 36px color-mix(in srgb,var(--k,var(--coral)) 22%,transparent)}
+.card:nth-child(even):hover{transform:translateY(-6px) rotate(.6deg)}
+.card:hover::before{opacity:1}
+.cb small{display:inline-flex;align-items:center;gap:6px;color:var(--k,var(--gold))}
+.cb small::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--k,var(--gold))}
+.tg2{background:var(--sun-soft);color:#7d520c;border:1.5px dashed #e3b763;transform:rotate(-6deg);font-weight:700;animation:pop .5s .3s both}
+.tg2.g{transform:none;border-style:solid;animation:none}
+
+.cg5>.col:nth-child(1) .l b{background:var(--coral-soft);color:#8f3a28}
+.cg5>.col:nth-child(2) .l b{background:var(--sun-soft);color:#7d520c}
+.cg5>.col:nth-child(3) .l b{background:var(--rose-soft);color:#8c2e48}
+.cg5>.col:nth-child(4) .l b{background:var(--mint-soft);color:#2b6852}
+.cg5>.col:nth-child(5) .l b{background:var(--lav-soft);color:#5a3f8f}
+.col{background:var(--card);border:1px solid var(--line)}
+.col .l{position:static;padding:10px 12px 12px;background:none;border-top:1px solid var(--line)}
+.col h3{font-size:19px}
+.col .l b{display:inline-block;margin-top:6px;padding:2px 10px;border-radius:99px;font-size:11.5px;font-weight:600}
+.col:hover{transform:translateY(-4px)}
+.col{transition:transform .25s}
+
+.tags span:nth-child(4n+1){background:var(--coral-soft);color:#8f3a28;border-color:#f3c8bb}
+.tags span:nth-child(4n+2){background:var(--mint-soft);color:#2b6852;border-color:#bfe0d2}
+.tags span:nth-child(4n+3){background:var(--lav-soft);color:#5a3f8f;border-color:#d6caec}
+.tags span:nth-child(4n){background:var(--sun-soft);color:#7d520c;border-color:#efd59a}
+.ul li::first-letter{color:var(--mint);font-weight:700}
+
+footer .dots{display:flex;justify-content:center;gap:6px;margin-bottom:10px}
+footer .dots i{width:8px;height:8px;border-radius:50%;animation:bob 2.4s ease-in-out infinite}
+footer .dots i:nth-child(1){background:var(--coral)}footer .dots i:nth-child(2){background:var(--sun);animation-delay:.2s}footer .dots i:nth-child(3){background:var(--mint);animation-delay:.4s}footer .dots i:nth-child(4){background:var(--lav);animation-delay:.6s}
+footer .w::before{display:none}
+
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wig{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(10deg)}}
+@keyframes pop{from{opacity:0;scale:.6}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body><div id="app"></div><div class="ov" id="ov"><div class="sheet" id="sheet"></div></div><div id="toast"></div>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -251,7 +359,7 @@ if(k=='floral')g=mug(-14,0,1,'#fffafa',petals(p.h));
 if(k=='magic')g=mug(-14,0,1,'#2b2b36',stars);
 if(k=='xmas')g=mug(-14,0,1,'#fff7f2',tree);
 if(k=='couple')g=mug(-8,26,.64,'#fffafa',heart(100,108,.8,'#e8506b'))+mug(52,34,.64,f,heart(100,108,.8,'#fff'));
-if(k=='kit'||k=='kit2')g=mug(-2,-14,.72,'#fffafa',k=='kit'?petals(p.h):heart(100,108,.8,'#e8506b'))+`<rect x="38" y="108" width="124" height="56" rx="7" fill="${f}"/><rect x="32" y="94" width="136" height="20" rx="6" fill="hsl(${h} 55% 52%)"/><rect x="93" y="94" width="14" height="70" fill="#fff" opacity=".85"/><path d="M100 94c-22-22-34-4-14 0zM100 94c22-22 34-4 14 0z" fill="#fff"/><circle cx="100" cy="94" r="5" fill="#fff"/><text x="132" y="146" font-family="Cormorant Garamond,serif" font-size="11" fill="#fff" text-anchor="middle">com amor</text>`;
+if(k=='kit'||k=='kit2')g=mug(-2,-14,.72,'#fffafa',k=='kit'?petals(p.h):heart(100,108,.8,'#e8506b'))+`<rect x="38" y="108" width="124" height="56" rx="7" fill="${f}"/><rect x="32" y="94" width="136" height="20" rx="6" fill="hsl(${h} 36% 68%)"/><rect x="93" y="94" width="14" height="70" fill="#fff" opacity=".85"/><path d="M100 94c-22-22-34-4-14 0zM100 94c22-22 34-4 14 0z" fill="#fff"/><circle cx="100" cy="94" r="5" fill="#fff"/><text x="132" y="146" font-family="Cormorant Garamond,serif" font-size="11" fill="#fff" text-anchor="middle">com amor</text>`;
 if(k=='tee')g=`<ellipse cx="100" cy="172" rx="56" ry="6" fill="#0002"/><path d="M68 36L28 64l18 30 22-12v82h64V82l22 12 18-30-40-28q-14 14-32 12-18 2-32-12z" fill="#fffafa" stroke="#0002"/><path d="M76 38q24 22 48 0" fill="none" stroke="#0002" stroke-width="3"/>${heart(100,100,1,'#e8506b')}<text x="100" y="140" font-family="Cormorant Garamond,serif" font-size="14" text-anchor="middle" fill="#e8506b">Eu te amo</text>`;
 if(k=='key')g=`<ellipse cx="100" cy="176" rx="40" ry="5" fill="#0002"/><circle cx="100" cy="36" r="16" fill="none" stroke="#9aa3ad" stroke-width="5"/><path d="M100 52v16" stroke="#9aa3ad" stroke-width="4"/><rect x="58" y="66" width="84" height="104" rx="22" fill="#fff" stroke="#0002"/><circle cx="100" cy="82" r="5" fill="${f}" opacity=".6"/><text x="100" y="132" font-family="Cormorant Garamond,serif" font-size="30" font-weight="600" text-anchor="middle" fill="hsl(${p.h} 55% 45%)">Ana</text><path d="M78 148h44" stroke="${f}" stroke-width="3" stroke-linecap="round"/>`;
 const t=v==1?'translate(-38 -34) scale(1.38)':v==2?'rotate(-5 100 100) translate(8 8) scale(.92)':'';
@@ -262,15 +370,17 @@ const LG={'Mercado Livre':'<svg viewBox="0 0 72 40" aria-hidden="true"><ellipse 
 const buy=(p,lg)=>p.av?`<div class="bz${lg?' lg':''}">${Object.keys(LG).map(m=>`<a class="mpb ${m==='Shopee'?'sp':'ml'}" target="_blank" rel="noopener" href="${p.links[m]}"><span>${LG[m]}</span></a>`).join('')}</div>`:`<div class="mpb off"><span>Indisponível</span></div>`;
 const card=(p,i)=>`<div class="card" style="animation-delay:${i*45}ms"><a href="#/produto/${p.slug}" style="display:block"><div class="im">${art(p)}${p.promo?`<span class="tg2">-${Math.round((1-p.promo/p.price)*100)}%</span>`:''}${p.av?'':'<span class="tg2 g">Esgotado</span>'}</div><div class="cb"><small>${cn(p.col)}</small><h3>${esc(p.name)}</h3><div class="pr">${price(p)}</div></div></a>${buy(p)}</div>`;
 const grid=l=>l.length?`<div class="grid">${l.map(card).join('')}</div>`:`<div class="empty"><div style="font-size:44px">🔎</div><p>Nenhum produto encontrado.</p></div>`;
-const colCard=(c,i)=>{const n=P.filter(p=>p.col===c.id).length;return`<a class="col" style="animation-delay:${i*50}ms" href="#/loja/${ST.slug}/colecao/${c.slug}"><div class="im">${art({kind:c.kind,h:c.h,name:c.name})}</div><div class="l"><h3>${c.name}</h3><span>${n} produto${n>1?'s':''}</span></div></a>`};
-const shell=b=>`<header class="top"><div class="w"><a class="brand" href="#/loja/${ST.slug}">Encantos<i> ✦</i></a><button class="btn o s">WhatsApp</button></div></header><main class="w">${b}</main><footer><div class="w">© ${new Date().getFullYear()} ${ST.name} · Feito com carinho</div></footer>`;
+const colCard=(c,i)=>{const n=P.filter(p=>p.col===c.id).length;return`<a class="col" style="animation-delay:${i*50}ms" href="#/loja/${ST.slug}/colecao/${c.slug}"><div class="im">${art({kind:c.kind,h:c.h,name:c.name})}</div><div class="l"><h3>${c.name}</h3><b>${n} produto${n>1?'s':''}</b></div></a>`};
+const shell=b=>`<header class="top"><div class="w"><a class="brand" href="#/loja/${ST.slug}">Encantos<i> ✦</i></a><button class="btn o s">WhatsApp</button></div></header><main class="w">${b}</main><footer><div class="w"><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>© ${new Date().getFullYear()} ${ST.name} · Feito com carinho</div></footer>`;
 const F={q:'',col:'',cat:'',max:'',av:false},nF=()=>[F.col,F.cat,F.max,F.av].filter(Boolean).length;
 const match=p=>{const q=norm(F.q);return(!q||[p.name,p.cat,cn(p.col),...p.tags].some(x=>norm(x).includes(q)))&&(!F.col||p.col===F.col)&&(!F.cat||p.cat===F.cat)&&(!F.max||(p.promo||p.price)<=+F.max)&&(!F.av||p.av)};
 function refresh(){const a=F.q||nF(),r=P.filter(match);$('#home').hidden=!!a;$('#res').hidden=!a;if(a)$('#res').innerHTML=`<div class="sec"><div class="sh2"><h2>Resultados</h2><span>${r.length} produto(s)</span></div>${grid(r)}</div>`;$('#fb').textContent='Filtros'+(nF()?` (${nF()})`:'')}
 function meta(t,d){document.title=t;[['description','name'],['og:title','property'],['og:description','property']].forEach(([k,a],i)=>{let m=document.querySelector(`meta[${a}="${k}"]`);if(!m){m=document.createElement('meta');m.setAttribute(a,k);document.head.appendChild(m)}m.content=i==1?t:d})}
-function store(){meta(ST.name,ST.desc);return{after:refresh,html:shell(`<section class="hero"><div class="logo">E</div><h1>${ST.name}</h1><p>@${ST.insta}</p><p>${ST.desc}</p><div class="tg">${ST.tagline}</div><div class="row"><button class="btn">Instagram</button><button class="btn o">WhatsApp</button></div></section>
+function store(){meta(ST.name,ST.desc);return{after:refresh,html:shell(`<section class="hero"><span class="fx f1" aria-hidden="true">♥</span><span class="fx f2" aria-hidden="true">✦</span><span class="fx f3" aria-hidden="true">☕</span><span class="fx f4" aria-hidden="true">🎁</span><span class="fx f5" aria-hidden="true">✿</span><span class="fx f6" aria-hidden="true">★</span><div class="logo">E</div><h1>${ST.name.replace(/ (\S+)$/,' <em>$1</em>')}</h1><p>@${ST.insta}</p><p>${ST.desc}</p><div class="tg">${ST.tagline}</div><div class="row"><button class="btn">Instagram</button><button class="btn o">WhatsApp</button></div></section>
+<div class="mq" aria-hidden="true"><div>${[0,1].map(()=>['Canecas','Kits presente','Dia dos Namorados','Natal','Lembrancinhas','Feito à mão','Com seu nome'].map(t=>`<span><i>✦</i>${t}</span>`).join('')).join('')}</div></div>
+<div class="perks"><div class="perk"><i>🎨</i><div><b>Arte exclusiva</b><small>Criada só para você</small></div></div><div class="perk"><i>✍️</i><div><b>Com o seu nome</b><small>Personalize do seu jeito</small></div></div><div class="perk"><i>📦</i><div><b>Envio para todo o Brasil</b><small>Embalado com carinho</small></div></div><div class="perk"><i>🔒</i><div><b>Compra segura</b><small>Shopee e Mercado Livre</small></div></div></div>
 <div class="sb"><input id="q" type="search" placeholder="Buscar: caneca, natal, presente…" value="${esc(F.q)}"><button class="btn o" id="fb" data-a="filt">Filtros</button></div><div id="res" hidden></div>
-<div id="home"><div class="sec"><div class="sh2"><h2>Novidades</h2><span>Mais pedidos</span></div>${grid(P.filter(p=>p.feat).slice(0,4))}</div><div class="sec"><div class="sh2"><h2>Coleções</h2></div><div class="grid cg cg5">${C.map(colCard).join('')}</div></div><div class="sec"><div class="sh2"><h2>Todos os produtos</h2><span>${P.length} itens</span></div>${grid(P)}</div></div>`)}}
+<div id="home"><div class="sec"><div class="sh2"><h2><i class="ic">✨</i>Novidades</h2><span>Mais pedidos</span></div>${grid(P.filter(p=>p.feat).slice(0,4))}</div><div class="sec"><div class="sh2"><h2><i class="ic">🎀</i>Coleções</h2></div><div class="grid cg cg5">${C.map(colCard).join('')}</div></div><div class="sec"><div class="sh2"><h2><i class="ic">🛍️</i>Todos os produtos</h2><span>${P.length} itens</span></div>${grid(P)}</div></div>`)}}
 function colPage(sl,cs){const c=C.find(x=>x.slug===cs);if(!c)return;meta(c.name+' | '+ST.name,c.desc);return{html:shell(`<div class="sec"><a href="#/loja/${sl}" style="color:var(--mu);font-size:14px">← Voltar</a><h2 style="font-size:clamp(32px,4vw,44px);margin:10px 0 4px">${c.name}</h2><p style="color:var(--mu);margin:0 0 20px">${c.desc}</p>${grid(P.filter(p=>p.col===c.id))}</div>`)}}
 function prod(sl){const p=P.find(x=>x.slug===sl);if(!p)return;meta(`${p.name} | ${ST.name}`,p.desc);window.G=[0,1,2].map(v=>art(p,v));
 return{html:shell(`<a href="#/loja/${ST.slug}" style="color:var(--mu);display:block;margin-top:18px">← Voltar ao catálogo</a><div class="pg"><div><div class="main" id="gm">${G[0]}</div><div class="th">${G.map((s,i)=>`<button data-a="thumb" data-i="${i}" class="${i?'':'on'}" aria-label="Imagem ${i+1}">${s}</button>`).join('')}</div></div>
