@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Encantos Personalizados</title>
+<title>DR Personalizados</title>
 <meta name="description" content="Presentes personalizados feitos com carinho">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@400;500;600&display=swap">
 <style>
@@ -82,7 +82,7 @@ svg{display:block;width:100%;height:auto}
 .logo{
   position:relative;z-index:1;width:96px;height:96px;margin:0 auto 16px;border-radius:50%;
   display:grid;place-items:center;
-  font:600 44px 'Cormorant Garamond',serif;color:var(--ac);
+  font:600 38px 'Cormorant Garamond',serif;color:var(--ac);letter-spacing:.02em;
   background:linear-gradient(160deg,#faf6f2,#f3ebe6);
   box-shadow:0 8px 20px #d9ccc455,inset 0 0 0 5px #f6efe9
 }
@@ -332,7 +332,7 @@ footer .w::before{display:none}
 </style></head><body><div id="app"></div><div class="ov" id="ov"><div class="sheet" id="sheet"></div></div><div id="toast"></div>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const ST={name:'Encantos Personalizados',slug:'encantos',insta:'encantospersonalizados',wa:'5511999999999',desc:'Presentes personalizados feitos com carinho ✨',tagline:'Canecas • Kits • Presentes • Lembranças'};
+const ST={name:'DR Personalizados',slug:'dr-personalizados',insta:'drpersonalizados',wa:'5511999999999',desc:'Presentes personalizados feitos com carinho ✨',tagline:'Canecas • Kits • Presentes • Lembranças'};
 const MP=s=>s==='WhatsApp'?'Comprar pelo WhatsApp':'Comprar na '+s;
 const C=[['Canecas','Cerâmica com nome e arte exclusiva','floral',340],['Kits Presente','Combos prontos para presentear','kit',280],['Dia dos Namorados','Para quem você ama','couple',350],['Natal','Lembranças de fim de ano','xmas',150],['Lembrancinhas','Para festas e eventos','key',35]].map(([name,desc,kind,h],i)=>({id:'c'+(i+1),name,desc,kind,h,slug:name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-')}));
 const NE='https://shopee.com.br/',ML='https://www.mercadolivre.com.br/';
@@ -371,12 +371,12 @@ const buy=(p,lg)=>p.av?`<div class="bz${lg?' lg':''}">${Object.keys(LG).map(m=>`
 const card=(p,i)=>`<div class="card" style="animation-delay:${i*45}ms"><a href="#/produto/${p.slug}" style="display:block"><div class="im">${art(p)}${p.promo?`<span class="tg2">-${Math.round((1-p.promo/p.price)*100)}%</span>`:''}${p.av?'':'<span class="tg2 g">Esgotado</span>'}</div><div class="cb"><small>${cn(p.col)}</small><h3>${esc(p.name)}</h3><div class="pr">${price(p)}</div></div></a>${buy(p)}</div>`;
 const grid=l=>l.length?`<div class="grid">${l.map(card).join('')}</div>`:`<div class="empty"><div style="font-size:44px">🔎</div><p>Nenhum produto encontrado.</p></div>`;
 const colCard=(c,i)=>{const n=P.filter(p=>p.col===c.id).length;return`<a class="col" style="animation-delay:${i*50}ms" href="#/loja/${ST.slug}/colecao/${c.slug}"><div class="im">${art({kind:c.kind,h:c.h,name:c.name})}</div><div class="l"><h3>${c.name}</h3><b>${n} produto${n>1?'s':''}</b></div></a>`};
-const shell=b=>`<header class="top"><div class="w"><a class="brand" href="#/loja/${ST.slug}">Encantos<i> ✦</i></a><button class="btn o s">WhatsApp</button></div></header><main class="w">${b}</main><footer><div class="w"><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>© ${new Date().getFullYear()} ${ST.name} · Feito com carinho</div></footer>`;
+const shell=b=>`<header class="top"><div class="w"><a class="brand" href="#/loja/${ST.slug}">DR Personalizados<i> ✦</i></a><button class="btn o s">WhatsApp</button></div></header><main class="w">${b}</main><footer><div class="w"><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>© ${new Date().getFullYear()} ${ST.name} · Feito com carinho</div></footer>`;
 const F={q:'',col:'',cat:'',max:'',av:false},nF=()=>[F.col,F.cat,F.max,F.av].filter(Boolean).length;
 const match=p=>{const q=norm(F.q);return(!q||[p.name,p.cat,cn(p.col),...p.tags].some(x=>norm(x).includes(q)))&&(!F.col||p.col===F.col)&&(!F.cat||p.cat===F.cat)&&(!F.max||(p.promo||p.price)<=+F.max)&&(!F.av||p.av)};
 function refresh(){const a=F.q||nF(),r=P.filter(match);$('#home').hidden=!!a;$('#res').hidden=!a;if(a)$('#res').innerHTML=`<div class="sec"><div class="sh2"><h2>Resultados</h2><span>${r.length} produto(s)</span></div>${grid(r)}</div>`;$('#fb').textContent='Filtros'+(nF()?` (${nF()})`:'')}
 function meta(t,d){document.title=t;[['description','name'],['og:title','property'],['og:description','property']].forEach(([k,a],i)=>{let m=document.querySelector(`meta[${a}="${k}"]`);if(!m){m=document.createElement('meta');m.setAttribute(a,k);document.head.appendChild(m)}m.content=i==1?t:d})}
-function store(){meta(ST.name,ST.desc);return{after:refresh,html:shell(`<section class="hero"><span class="fx f1" aria-hidden="true">♥</span><span class="fx f2" aria-hidden="true">✦</span><span class="fx f3" aria-hidden="true">☕</span><span class="fx f4" aria-hidden="true">🎁</span><span class="fx f5" aria-hidden="true">✿</span><span class="fx f6" aria-hidden="true">★</span><div class="logo">E</div><h1>${ST.name.replace(/ (\S+)$/,' <em>$1</em>')}</h1><p>@${ST.insta}</p><p>${ST.desc}</p><div class="tg">${ST.tagline}</div><div class="row"><button class="btn">Instagram</button><button class="btn o">WhatsApp</button></div></section>
+function store(){meta(ST.name,ST.desc);return{after:refresh,html:shell(`<section class="hero"><span class="fx f1" aria-hidden="true">♥</span><span class="fx f2" aria-hidden="true">✦</span><span class="fx f3" aria-hidden="true">☕</span><span class="fx f4" aria-hidden="true">🎁</span><span class="fx f5" aria-hidden="true">✿</span><span class="fx f6" aria-hidden="true">★</span><div class="logo">DR</div><h1>${ST.name.replace(/ (\S+)$/,' <em>$1</em>')}</h1><p>@${ST.insta}</p><p>${ST.desc}</p><div class="tg">${ST.tagline}</div><div class="row"><button class="btn">Instagram</button><button class="btn o">WhatsApp</button></div></section>
 <div class="mq" aria-hidden="true"><div>${[0,1].map(()=>['Canecas','Kits presente','Dia dos Namorados','Natal','Lembrancinhas','Feito à mão','Com seu nome'].map(t=>`<span><i>✦</i>${t}</span>`).join('')).join('')}</div></div>
 <div class="perks"><div class="perk"><i>🎨</i><div><b>Arte exclusiva</b><small>Criada só para você</small></div></div><div class="perk"><i>✍️</i><div><b>Com o seu nome</b><small>Personalize do seu jeito</small></div></div><div class="perk"><i>📦</i><div><b>Envio para todo o Brasil</b><small>Embalado com carinho</small></div></div><div class="perk"><i>🔒</i><div><b>Compra segura</b><small>Shopee e Mercado Livre</small></div></div></div>
 <div class="sb"><input id="q" type="search" placeholder="Buscar: caneca, natal, presente…" value="${esc(F.q)}"><button class="btn o" id="fb" data-a="filt">Filtros</button></div><div id="res" hidden></div>
