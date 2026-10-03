@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Encantos Personalizados</title>
+<meta name="description" content="Presentes personalizados feitos com carinho">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ac:#8a4f5d;
+  --ac-deep:#73424e;
+  --gold:#8d6b45;
+  --gold-soft:#f3ebe3;
+  --ac2:#f1e8e4;
+  --bg:#f3eee9;
+  --tx:#2f2729;
+  --mu:#5f5458;
+  --card:#f7f3ef;
+  --line:#e4dbd6;
+  --r:22px;
+  --sh:0 1px 2px #2f272908,0 12px 28px #cfc3bc33;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*{box-sizing:border-box}
+a,button,.btn,.card,.col,label{cursor:pointer}
+input,select{cursor:text}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;
+  color:var(--tx);
+  font:15px/1.6 Outfit,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(ellipse 70% 42% at 0% -8%, color-mix(in srgb, var(--ac) 28%, transparent), transparent 55%),
+    radial-gradient(ellipse 55% 36% at 100% 0%, color-mix(in srgb, var(--gold) 35%, transparent), transparent 50%);
+  background-attachment:fixed
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.02em;color:#241c1e}
+svg{display:block;width:100%;height:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+.top{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:5;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:1px solid color-mix(in srgb,var(--gold) 35%,var(--line))
+}
+.top .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:600 22px 'Cormorant Garamond',serif;letter-spacing:.01em}
+.brand i{color:var(--gold);font-style:normal}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 24px;border:1.5px solid #f0e4e7;border-radius:999px;
+  background:#f3e6e8;
+  color:#7a4552;font:500 15px Outfit,sans-serif;cursor:pointer;
+  box-shadow:none;
+  transition:transform .2s,background .2s,border-color .2s
+}
+.btn:hover{background:#eddde0;transform:translateY(-1px)}
+.btn.o{background:var(--card);color:var(--tx);border-color:var(--line);box-shadow:none}
+.btn.o:hover{border-color:var(--gold);color:var(--ac);background:#f3ece7}
+.btn[disabled]{opacity:.5;pointer-events:none;box-shadow:none}
+.btn.s{min-height:40px;padding:0 16px;font-size:14px}
+.hero{
+  position:relative;overflow:hidden;margin-top:22px;border-radius:32px;text-align:center;
+  padding:52px 24px 42px;
+  border:1px solid color-mix(in srgb,var(--gold) 38%,var(--line));
+  background:
+    radial-gradient(ellipse at 12% 0%,#f6e6e2 0%,transparent 50%),
+    radial-gradient(ellipse at 92% 100%,#f3eadf 0%,transparent 46%),
+    radial-gradient(ellipse at 50% 45%,#f8f1ec 0%,transparent 58%),
+    linear-gradient(165deg,#f7f2ee 0%,#f3ebe6 100%);
+  box-shadow:var(--sh)
+}
+.hero::after{
+  content:"";position:absolute;inset:14px;border-radius:22px;pointer-events:none;
+  border:1px solid color-mix(in srgb,var(--gold) 45%,transparent)
+}
+.logo{
+  position:relative;z-index:1;width:96px;height:96px;margin:0 auto 16px;border-radius:50%;
+  display:grid;place-items:center;
+  font:600 44px 'Cormorant Garamond',serif;color:var(--ac);
+  background:linear-gradient(160deg,#faf6f2,#f3ebe6);
+  box-shadow:0 8px 20px #d9ccc455,inset 0 0 0 5px #f6efe9
+}
+.logo::after{
+  content:"";position:absolute;inset:-7px;border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--gold) 70%,transparent)
+}
+.hero h1{position:relative;z-index:1;font-size:clamp(34px,5vw,52px)}
+.hero p{position:relative;z-index:1;margin:8px auto 0;max-width:440px;color:var(--mu)}
+.hero .tg{
+  position:relative;z-index:1;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  margin-top:16px;color:var(--ac);font-weight:600;font-family:Outfit,sans-serif
+}
+.hero .tg::before,.hero .tg::after{
+  content:"";display:inline-block;width:28px;height:1px;background:var(--gold);
+  margin:0 10px 4px;vertical-align:middle
+}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+.hero .row{position:relative;z-index:1;margin-top:22px}
+.sb{display:flex;gap:10px;margin:26px 0 6px}
+input,select{
+  width:100%;min-height:50px;padding:0 18px;border:1.5px solid var(--line);border-radius:999px;
+  background:var(--card);color:var(--tx);font:15px Outfit,sans-serif;
+  box-shadow:0 1px 2px #2c232608
+}
+select{border-radius:16px}
+input:focus,select:focus{outline:2px solid var(--gold);border-color:transparent;box-shadow:0 0 0 4px #e8d9c866}
+label{display:block;font-size:13px;font-weight:500;margin:14px 0 6px;color:var(--mu)}
+.sec{margin:42px 0}
+.sh2{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;gap:12px}
+.sh2 h2{font-size:clamp(26px,3vw,34px)}
+.sh2 h2::after{
+  content:"";display:block;width:42px;height:2px;margin-top:8px;border-radius:99px;
+  background:linear-gradient(90deg,var(--gold),var(--ac))
+}
+.sh2 span{color:var(--mu);font-size:13px;letter-spacing:.04em;padding-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:760px){
+  .grid{grid-template-columns:repeat(4,1fr);gap:22px}
+  .cg{grid-template-columns:repeat(3,1fr)}
+  .cg5{grid-template-columns:repeat(5,1fr)}
+}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sh);display:block;transition:transform .25s,box-shadow .25s,border-color .25s;
+  animation:in .45s both
+}
+.card:hover{transform:translateY(-6px);border-color:#efe4df;box-shadow:0 16px 34px #e6d5d833}
+.card:hover svg{transform:scale(1.05)}
+.card svg,.main svg{transition:.45s}
+.im{position:relative;overflow:hidden;aspect-ratio:1}
+.tg2{
+  position:absolute;top:12px;left:12px;color:#7a5a38;font-size:11px;font-weight:600;
+  letter-spacing:.04em;border-radius:99px;padding:4px 10px;
+  background:#f3eadf;border:1px solid #e6d8c8;
+  box-shadow:none
+}
+.tg2.g{background:color-mix(in srgb,var(--card) 88%,transparent);color:var(--mu);border:1px solid var(--line);box-shadow:none}
+.cb{padding:14px 14px 8px}
+.mpb{
+  display:flex;align-items:center;justify-content:center;
+  margin:0;padding:6px 4px;min-height:0;border:1px solid transparent;border-radius:10px;
+  font-size:9px;font-weight:600;line-height:1.15;text-align:center;transition:border-color .2s,background .2s
+}
+.mpb:hover{background:var(--card)}
+.bz{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 12px 12px}
+.bz.lg{margin:16px 0 0;gap:8px}
+.bz.lg .mpb{min-height:40px;padding:8px 14px;font-size:13px;border-radius:12px}
+.bz.lg .mpb span{flex-direction:row;gap:8px}
+.bz.lg .mpb b br{display:none}
+.bz.lg .mpb svg,.bz.lg .mpb.sp svg{width:18px;height:18px}
+.mpb.sp{background:#fff6f3;color:#c94a34;border-color:#f0ddd6}
+.mpb.ml{background:#fffbf0;color:#3a3f86;border-color:#f0e8c8}
+.mpb b{font-weight:600}
+.mpb.off{margin:0 12px 12px;background:var(--ac2);color:var(--mu);border-color:transparent;min-height:34px;font-size:12px}
+.mpb span{display:flex;flex-direction:column;align-items:center;gap:3px}
+.mpb svg,.mpb.sp svg{width:14px;height:14px;flex:none}
+.mpb em{display:none}
+.cb small{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.cb h3{font:600 18px/1.2 'Cormorant Garamond',serif;margin:4px 0 8px;min-height:44px;letter-spacing:-.01em}
+@media(min-width:760px){.cb h3{font-size:21px;min-height:50px}}
+.pr b{font-size:17px;font-weight:600;color:var(--ac);font-variant-numeric:tabular-nums}
+.pr s{color:var(--mu);font-size:12px;margin-left:6px}
+.col{display:block;border-radius:var(--r);overflow:hidden;position:relative;animation:in .45s both;box-shadow:var(--sh)}
+.col:hover svg{transform:scale(1.06)}
+.col .l{
+  position:absolute;inset:auto 0 0;padding:52px 16px 16px;color:#3a3033;
+  background:linear-gradient(transparent,rgba(255,250,248,.35) 18%,rgba(255,248,246,.94))
+}
+.col h3{font:600 22px 'Cormorant Garamond',serif}
+.col span{font-size:12px;letter-spacing:.04em;opacity:.92}
+.col .im{aspect-ratio:4/3}
+.ov{position:fixed;inset:0;background:#f4eeecb8;backdrop-filter:blur(4px);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.ov.open{display:flex}
+.sheet{
+  background:var(--card);width:100%;max-width:480px;border-radius:28px 28px 0 0;
+  padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));
+  animation:up .25s;border:1px solid var(--line);box-shadow:var(--sh)
+}
+.sheet h3{font-size:30px;margin-bottom:6px}
+@media(max-width:759px){
+  .sheet::before{content:"";display:block;width:42px;height:4px;border-radius:99px;background:var(--line);margin:-4px auto 14px}
+}
+@media(min-width:760px){.ov{align-items:center}.sheet{border-radius:28px}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+@keyframes sk{to{background-position:-200%}}
+.pg .row .btn{box-shadow:0 8px 18px #00000018}
+.pg{display:grid;gap:28px;margin:22px 0 48px}
+@media(min-width:800px){.pg{grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}}
+.main{border-radius:28px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);background:var(--card)}
+.th{display:flex;gap:10px;margin-top:12px}
+.th button{width:74px;height:74px;border-radius:16px;border:2px solid transparent;padding:0;overflow:hidden;background:var(--card);opacity:.72;box-shadow:var(--sh)}
+.th button.on{border-color:var(--gold);opacity:1;box-shadow:0 0 0 1px var(--gold)}
+.big{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;margin:8px 0 14px;color:var(--ac)}
+.big s{font-family:Outfit,sans-serif;font-size:16px;color:var(--mu);font-weight:400;margin-left:8px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.tags span,.bd{
+  background:var(--gold-soft);color:var(--ac-deep);border-radius:99px;padding:5px 12px;font-size:12px;
+  border:1px solid color-mix(in srgb,var(--gold) 35%,transparent)
+}
+.bd.w2{background:#f3eadf;color:#7a5a38}
+.ul{list-style:none;padding:0;margin:18px 0;color:var(--mu);font-size:14.5px}
+.ul li{padding:8px 0;border-bottom:1px solid var(--line)}
+.sk{background:linear-gradient(90deg,var(--ac2),var(--card),var(--ac2));background-size:200%;animation:sk 1.2s infinite;border-radius:var(--r);aspect-ratio:1}
+.empty{text-align:center;padding:56px 12px;color:var(--mu)}
+#toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(8px);
+  background:var(--card);color:var(--tx);border:1px solid var(--line);padding:12px 18px;border-radius:99px;font-size:14px;
+  opacity:0;pointer-events:none;transition:.3s;z-index:30;box-shadow:0 10px 24px #e7d5d444
+}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{
+  margin-top:12px;border-top:1px solid var(--line);padding:36px 0 48px;text-align:center;
+  color:var(--mu);font-size:13px;
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--gold) 12%,transparent))
+}
+footer .w::before{content:"✦";display:block;color:var(--gold);font-size:14px;margin-bottom:8px}
+</style></head><body><div id="app"></div><div class="ov" id="ov"><div class="sheet" id="sheet"></div></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ST={name:'Encantos Personalizados',slug:'encantos',insta:'encantospersonalizados',wa:'5511999999999',desc:'Presentes personalizados feitos com carinho ✨',tagline:'Canecas • Kits • Presentes • Lembranças'};
+const MP=s=>s==='WhatsApp'?'Comprar pelo WhatsApp':'Comprar na '+s;
+const C=[['Canecas','Cerâmica com nome e arte exclusiva','floral',340],['Kits Presente','Combos prontos para presentear','kit',280],['Dia dos Namorados','Para quem você ama','couple',350],['Natal','Lembranças de fim de ano','xmas',150],['Lembrancinhas','Para festas e eventos','key',35]].map(([name,desc,kind,h],i)=>({id:'c'+(i+1),name,desc,kind,h,slug:name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-')}));
+const NE='https://shopee.com.br/',ML='https://www.mercadolivre.com.br/';
+const P=[['Caneca Personalizada Floral','Caneca de cerâmica personalizada com nome e arte exclusiva.',49.9,0,1,'Canecas',['caneca','floral','presente'],'Shopee',NE,1,'floral'],
+['Caneca Mágica Preta','Revela a arte quando recebe líquido quente. Surpreenda na primeira xícara.',59.9,49.9,1,'Canecas',['caneca','mágica'],'Mercado Livre',ML,1,'magic'],
+['Kit Café da Manhã','Caneca, colher e caixa decorada para presente.',99.9,89.9,2,'Kits',['kit','café','presente'],'Shopee',NE,1,'kit'],
+['Kit Mães Especial','Caneca + chaveiro + cartão com mensagem carinhosa.',79.9,0,2,'Kits',['mães','kit','presente'],'Shopee',NE,1,'kit2'],
+['Caneca Casal Apaixonados','Par de canecas com nomes e data especial.',89.9,74.9,3,'Canecas',['namorados','casal','caneca'],'Shopee',NE,1,'couple'],
+['Camiseta Eu Te Amo','Camiseta de algodão com estampa personalizada.',69.9,0,3,'Camisetas',['namorados','camiseta'],'Mercado Livre',ML,0,'tee'],
+['Caneca Natal Feliz','Edição de Natal com o nome do presenteado.',54.9,0,4,'Canecas',['natal','caneca'],'Shopee',NE,0,'xmas'],
+['Chaveiro com Nome','Chaveiro em acrílico para lembrancinhas de festas.',12.9,9.9,5,'Chaveiros',['chaveiro','lembrancinha'],'Shopee',NE,0,'key']]
+.map(([name,desc,price,promo,c,cat,tags,mp,url,feat,kind],i)=>({id:i+1,name,desc,price,promo,col:'c'+c,cat,tags,mp,url,feat,kind,av:i!==5,slug:name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/-$/,''),h:C[c-1].h,date:i}));
+P.forEach(p=>p.links={Shopee:'https://shopee.com.br/search?keyword='+encodeURIComponent(p.name),'Mercado Livre':'https://lista.mercadolivre.com.br/'+p.slug});
+const brl=n=>'R$ '+n.toFixed(2).replace('.',','),norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* ilustrações vetoriais dos produtos */
+let _n=0;
+const mug=(x,y,s,f,deco,hc)=>`<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="100" cy="160" rx="54" ry="8" fill="#0002"/><path d="M146 78q32 0 32 28t-32 28" fill="none" stroke="${hc||f}" stroke-width="10"/><path d="M54 64h92v70q0 24-24 24H78q-24 0-24-24z" fill="${f}" stroke="#0001"/><path d="M62 70v62q0 14 12 18" fill="none" stroke="#fff" stroke-width="5" opacity=".35" stroke-linecap="round"/><ellipse cx="100" cy="64" rx="46" ry="10" fill="${f}" stroke="#0001"/><ellipse cx="100" cy="65" rx="40" ry="7" fill="#0003"/>${deco}</g>`;
+const petals=(h)=>[0,72,144,216,288].map(a=>`<ellipse cx="${100+13*Math.cos(a*Math.PI/180)}" cy="${108+13*Math.sin(a*Math.PI/180)}" rx="9" ry="9" fill="hsl(${h} 75% 78%)"/>`).join('')+`<circle cx="100" cy="108" r="7" fill="#ffc94d"/><path d="M62 134q14-18 28-8M138 134q-14-18-28-8" stroke="#74b98f" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+const heart=(x,y,s,f)=>`<path transform="translate(${x} ${y}) scale(${s})" d="M0 22C-30 2-24-22-8-20 -2-19 0-13 0-10 0-13 2-19 8-20 24-22 30 2 0 22z" fill="${f}"/>`;
+const tree=`<path d="M100 84l-17 24h9l-14 20h44l-14-20h9z" fill="#2f8f5b"/><rect x="97" y="128" width="6" height="8" fill="#7a4b2a"/><circle cx="96" cy="110" r="2.5" fill="#e63946"/><circle cx="106" cy="122" r="2.5" fill="#ffd166"/><path d="M100 78l2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z" fill="#ffd166"/>`;
+const stars=[[78,95],[118,100],[92,122],[124,125],[70,128],[106,88]].map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="${i%2?2:3}" fill="${['#ff9ecf','#8fd3ff','#ffe27a'][i%3]}"/>`).join('')+heart(100,112,.7,'#ff6fa5');
+const art=(p,v=0)=>{const i=++_n,h=p.h+(v==2?22:0),k=p.kind,f=`hsl(${h} 32% 78%)`;let g='';
+if(k=='floral')g=mug(-14,0,1,'#fffafa',petals(p.h));
+if(k=='magic')g=mug(-14,0,1,'#2b2b36',stars);
+if(k=='xmas')g=mug(-14,0,1,'#fff7f2',tree);
+if(k=='couple')g=mug(-8,26,.64,'#fffafa',heart(100,108,.8,'#e8506b'))+mug(52,34,.64,f,heart(100,108,.8,'#fff'));
+if(k=='kit'||k=='kit2')g=mug(-2,-14,.72,'#fffafa',k=='kit'?petals(p.h):heart(100,108,.8,'#e8506b'))+`<rect x="38" y="108" width="124" height="56" rx="7" fill="${f}"/><rect x="32" y="94" width="136" height="20" rx="6" fill="hsl(${h} 55% 52%)"/><rect x="93" y="94" width="14" height="70" fill="#fff" opacity=".85"/><path d="M100 94c-22-22-34-4-14 0zM100 94c22-22 34-4 14 0z" fill="#fff"/><circle cx="100" cy="94" r="5" fill="#fff"/><text x="132" y="146" font-family="Cormorant Garamond,serif" font-size="11" fill="#fff" text-anchor="middle">com amor</text>`;
+if(k=='tee')g=`<ellipse cx="100" cy="172" rx="56" ry="6" fill="#0002"/><path d="M68 36L28 64l18 30 22-12v82h64V82l22 12 18-30-40-28q-14 14-32 12-18 2-32-12z" fill="#fffafa" stroke="#0002"/><path d="M76 38q24 22 48 0" fill="none" stroke="#0002" stroke-width="3"/>${heart(100,100,1,'#e8506b')}<text x="100" y="140" font-family="Cormorant Garamond,serif" font-size="14" text-anchor="middle" fill="#e8506b">Eu te amo</text>`;
+if(k=='key')g=`<ellipse cx="100" cy="176" rx="40" ry="5" fill="#0002"/><circle cx="100" cy="36" r="16" fill="none" stroke="#9aa3ad" stroke-width="5"/><path d="M100 52v16" stroke="#9aa3ad" stroke-width="4"/><rect x="58" y="66" width="84" height="104" rx="22" fill="#fff" stroke="#0002"/><circle cx="100" cy="82" r="5" fill="${f}" opacity=".6"/><text x="100" y="132" font-family="Cormorant Garamond,serif" font-size="30" font-weight="600" text-anchor="middle" fill="hsl(${p.h} 55% 45%)">Ana</text><path d="M78 148h44" stroke="${f}" stroke-width="3" stroke-linecap="round"/>`;
+const t=v==1?'translate(-38 -34) scale(1.38)':v==2?'rotate(-5 100 100) translate(8 8) scale(.92)':'';
+return`<svg viewBox="0 0 200 200" role="img" aria-label="${esc(p.name)}"><defs><linearGradient id="g${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h} 42% ${v==1?99:97}%)"/><stop offset="1" stop-color="hsl(${h} 36% ${v==1?95:91}%)"/></linearGradient></defs><rect width="200" height="200" fill="url(#g${i})"/><circle cx="165" cy="35" r="30" fill="#fff" opacity=".35"/><g transform="${t}">${g}</g></svg>`};
+const price=p=>p.promo?`<b>${brl(p.promo)}</b><s>${brl(p.price)}</s>`:`<b>${brl(p.price)}</b>`;
+const colOf=id=>C.find(c=>c.id===id),cn=id=>colOf(id).name;
+const LG={'Mercado Livre':'<svg viewBox="0 0 72 40" aria-hidden="true"><ellipse cx="36" cy="20" rx="33" ry="17" fill="#ffe600" stroke="#2d3277" stroke-width="2.4"/><path fill="#fff" stroke="#2d3277" stroke-width="1.6" stroke-linejoin="round" d="M18 27c-1-8 4-13 10-10 2.2 1.2 3.4 3.4 4.2 6.2 1.2-4.6 3.6-8 8-6.6 2.2.6 3.4 2.6 3 5-3.2 1.2-5.4 4.4-5.2 8-2.4 1.4-6 2.2-9.2 1-5.2-1.6-9.6-1.2-10.8-3.6z"/><path fill="#fff" stroke="#2d3277" stroke-width="1.6" stroke-linejoin="round" d="M54 27c1-8-4-13-10-10-2.2 1.2-3.4 3.4-4.2 6.2-1.2-4.6-3.6-8-8-6.6-2.2.6-3.4 2.6-3 5 3.2 1.2 5.4 4.4 5.2 8 2.4 1.4 6 2.2 9.2 1 5.2-1.6 9.6-1.2 10.8-3.6z"/></svg><b>Mercado<br> Livre</b>',Shopee:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 18h24l-1.8 18.2A3.2 3.2 0 0 1 31 39H17a3.2 3.2 0 0 1-3.2-2.8z" fill="#ee4d2d"/><path d="M17 18v-2.2a7 7 0 0 1 14 0V18" fill="none" stroke="#ee4d2d" stroke-width="3" stroke-linecap="round"/><text x="24" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Outfit,sans-serif">S</text></svg>Shopee'};
+const buy=(p,lg)=>p.av?`<div class="bz${lg?' lg':''}">${Object.keys(LG).map(m=>`<a class="mpb ${m==='Shopee'?'sp':'ml'}" target="_blank" rel="noopener" href="${p.links[m]}"><span>${LG[m]}</span></a>`).join('')}</div>`:`<div class="mpb off"><span>Indisponível</span></div>`;
+const card=(p,i)=>`<div class="card" style="animation-delay:${i*45}ms"><a href="#/produto/${p.slug}" style="display:block"><div class="im">${art(p)}${p.promo?`<span class="tg2">-${Math.round((1-p.promo/p.price)*100)}%</span>`:''}${p.av?'':'<span class="tg2 g">Esgotado</span>'}</div><div class="cb"><small>${cn(p.col)}</small><h3>${esc(p.name)}</h3><div class="pr">${price(p)}</div></div></a>${buy(p)}</div>`;
+const grid=l=>l.length?`<div class="grid">${l.map(card).join('')}</div>`:`<div class="empty"><div style="font-size:44px">🔎</div><p>Nenhum produto encontrado.</p></div>`;
+const colCard=(c,i)=>{const n=P.filter(p=>p.col===c.id).length;return`<a class="col" style="animation-delay:${i*50}ms" href="#/loja/${ST.slug}/colecao/${c.slug}"><div class="im">${art({kind:c.kind,h:c.h,name:c.name})}</div><div class="l"><h3>${c.name}</h3><span>${n} produto${n>1?'s':''}</span></div></a>`};
+const shell=b=>`<header class="top"><div class="w"><a class="brand" href="#/loja/${ST.slug}">Encantos<i> ✦</i></a><button class="btn o s">WhatsApp</button></div></header><main class="w">${b}</main><footer><div class="w">© ${new Date().getFullYear()} ${ST.name} · Feito com carinho</div></footer>`;
+const F={q:'',col:'',cat:'',max:'',av:false},nF=()=>[F.col,F.cat,F.max,F.av].filter(Boolean).length;
+const match=p=>{const q=norm(F.q);return(!q||[p.name,p.cat,cn(p.col),...p.tags].some(x=>norm(x).includes(q)))&&(!F.col||p.col===F.col)&&(!F.cat||p.cat===F.cat)&&(!F.max||(p.promo||p.price)<=+F.max)&&(!F.av||p.av)};
+function refresh(){const a=F.q||nF(),r=P.filter(match);$('#home').hidden=!!a;$('#res').hidden=!a;if(a)$('#res').innerHTML=`<div class="sec"><div class="sh2"><h2>Resultados</h2><span>${r.length} produto(s)</span></div>${grid(r)}</div>`;$('#fb').textContent='Filtros'+(nF()?` (${nF()})`:'')}
+function meta(t,d){document.title=t;[['description','name'],['og:title','property'],['og:description','property']].forEach(([k,a],i)=>{let m=document.querySelector(`meta[${a}="${k}"]`);if(!m){m=document.createElement('meta');m.setAttribute(a,k);document.head.appendChild(m)}m.content=i==1?t:d})}
+function store(){meta(ST.name,ST.desc);return{after:refresh,html:shell(`<section class="hero"><div class="logo">E</div><h1>${ST.name}</h1><p>@${ST.insta}</p><p>${ST.desc}</p><div class="tg">${ST.tagline}</div><div class="row"><button class="btn">Instagram</button><button class="btn o">WhatsApp</button></div></section>
+<div class="sb"><input id="q" type="search" placeholder="Buscar: caneca, natal, presente…" value="${esc(F.q)}"><button class="btn o" id="fb" data-a="filt">Filtros</button></div><div id="res" hidden></div>
+<div id="home"><div class="sec"><div class="sh2"><h2>Novidades</h2><span>Mais pedidos</span></div>${grid(P.filter(p=>p.feat).slice(0,4))}</div><div class="sec"><div class="sh2"><h2>Coleções</h2></div><div class="grid cg cg5">${C.map(colCard).join('')}</div></div><div class="sec"><div class="sh2"><h2>Todos os produtos</h2><span>${P.length} itens</span></div>${grid(P)}</div></div>`)}}
+function colPage(sl,cs){const c=C.find(x=>x.slug===cs);if(!c)return;meta(c.name+' | '+ST.name,c.desc);return{html:shell(`<div class="sec"><a href="#/loja/${sl}" style="color:var(--mu);font-size:14px">← Voltar</a><h2 style="font-size:clamp(32px,4vw,44px);margin:10px 0 4px">${c.name}</h2><p style="color:var(--mu);margin:0 0 20px">${c.desc}</p>${grid(P.filter(p=>p.col===c.id))}</div>`)}}
+function prod(sl){const p=P.find(x=>x.slug===sl);if(!p)return;meta(`${p.name} | ${ST.name}`,p.desc);window.G=[0,1,2].map(v=>art(p,v));
+return{html:shell(`<a href="#/loja/${ST.slug}" style="color:var(--mu);display:block;margin-top:18px">← Voltar ao catálogo</a><div class="pg"><div><div class="main" id="gm">${G[0]}</div><div class="th">${G.map((s,i)=>`<button data-a="thumb" data-i="${i}" class="${i?'':'on'}" aria-label="Imagem ${i+1}">${s}</button>`).join('')}</div></div>
+<div><small style="color:var(--gold);letter-spacing:.08em;text-transform:uppercase;font-size:11px;font-weight:600">${cn(p.col)} · ${p.cat}</small><h1 style="font-size:clamp(32px,4vw,46px);margin:8px 0 2px">${esc(p.name)}</h1><div class="big">${p.promo?brl(p.promo)+`<s>${brl(p.price)}</s>`:brl(p.price)}</div><p>${esc(p.desc)}</p>
+<ul class="ul"><li>✓ Personalização com nome e arte exclusiva</li><li>✓ Produção artesanal em até 5 dias úteis</li><li>✓ Compra segura pela Shopee ou Mercado Livre</li></ul><div class="tags">${p.tags.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>
+<p><span class="bd ${p.av?'':'w2'}">${p.av?'Disponível':'Esgotado'}</span> <span class="bd">Vendido na Shopee e Mercado Livre</span></p>
+${buy(p,1)}
+<div class="row" style="justify-content:flex-start;margin-top:12px"><button class="btn o" data-a="share" data-t="${esc(p.name)}">Compartilhar</button><button class="btn o" data-a="copy">Copiar link</button></div></div></div>`)}}
+const nf=()=>({html:`<div class="empty" style="padding:100px 16px"><div style="font-size:52px">🧵</div><h1>Página não encontrada</h1><p>O link pode ter mudado.</p><a class="btn" href="#/loja/${ST.slug}">Ir para a loja</a></div>`});
+function route(){const h=location.hash.slice(1)||'/';let m,r;scrollTo(0,0);if(h==='/')return location.replace('#/loja/'+ST.slug);
+if(m=h.match(/^\/loja\/([^/]+)\/colecao\/([^/]+)$/))r=m[1]===ST.slug&&colPage(m[1],m[2]);else if(m=h.match(/^\/loja\/([^/]+)$/))r=m[1]===ST.slug&&store();else if(m=h.match(/^\/produto\/([^/]+)$/))r=prod(m[1]);
+r=r||nf();const a=$('#app');a.innerHTML=`<div class="w" style="padding-top:80px"><div class="grid">${'<div class="sk"></div>'.repeat(4)}</div></div>`;setTimeout(()=>{a.innerHTML=r.html;r.after&&r.after()},200)}
+addEventListener('hashchange',route);
+const opt=(l,v,s)=>`<option value="${v}" ${v===s?'selected':''}>${l}</option>`;
+function copy(){try{navigator.clipboard.writeText(location.href).then(()=>toast('Link copiado! ✓'),()=>toast('Não foi possível copiar'))}catch(e){toast('Não foi possível copiar')}}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2000)}
+const acts={copy,close:()=>$('#ov').classList.remove('open'),
+share:t=>{const d={title:t.dataset.t,text:t.dataset.t+' | '+ST.name,url:location.href};navigator.share?navigator.share(d).catch(()=>{}):copy()},
+thumb:t=>{$('#gm').innerHTML=G[+t.dataset.i];$$('.th button').forEach(b=>b.classList.toggle('on',b===t))},
+filt:()=>{$('#sheet').innerHTML=`<h3>Filtros</h3><label>Coleção</label><select id="fc"><option value="">Todas</option>${C.map(c=>opt(c.name,c.id,F.col)).join('')}</select><label>Categoria</label><select id="fg"><option value="">Todas</option>${[...new Set(P.map(p=>p.cat))].map(c=>opt(c,c,F.cat)).join('')}</select><label>Faixa de preço</label><select id="fp">${opt('Qualquer','',F.max)}${opt('Até R$ 50','50',F.max)}${opt('Até R$ 100','100',F.max)}${opt('Até R$ 200','200',F.max)}</select><label><input type="checkbox" id="fa" style="width:18px;min-height:18px" ${F.av?'checked':''}> Somente disponíveis</label><div class="row" style="margin-top:20px"><button class="btn" data-a="apply">Aplicar</button><button class="btn o" data-a="clear">Limpar</button></div>`;$('#ov').classList.add('open')},
+apply:()=>{F.col=$('#fc').value;F.cat=$('#fg').value;F.max=$('#fp').value;F.av=$('#fa').checked;acts.close();refresh()},clear:()=>{F.col=F.cat=F.max='';F.av=false;acts.close();refresh()}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(t)acts[t.dataset.a]?.(t);if(e.target.id==='ov')acts.close()});
+document.addEventListener('input',e=>{if(e.target.id==='q'){F.q=e.target.value;refresh()}});
+route();
+</script></body></html>
